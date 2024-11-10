@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Song with Full-Screen GIF</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    #birthday-link {
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #007bff;
+      border: 2px solid #007bff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: white;
+      transition: background-color 0.3s;
+    }
+    #birthday-link:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    #birthday-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: none;  /* Initially hidden */
+    }
+  </style>
+</head>
+<body>
+  <a href="#" id="birthday-link">Tap here</a>
+
+  <audio id="birthday-audio">
+    <source src="C:\Users\Khushi Kalyani\Downloads\audio.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <img id="birthday-gif" src="C:\Users\Khushi Kalyani\Downloads\tenor.gif" alt="Birthday GIF">
+  
+  <script>
+    document.getElementById('birthday-link').addEventListener('click', function(e) {
+      e.preventDefault();  // Prevent the default link action
+      var audio = document.getElementById('birthday-audio');
+      var gif = document.getElementById('birthday-gif');
+      
+      audio.play();  // Play the birthday song
+      gif.style.display = 'block';  // Show the full-screen birthday GIF
+    });
+  </script>
+</body>
+</html>
